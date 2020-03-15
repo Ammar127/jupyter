@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+#main-wrapper {
+    width: 100%;
+    overflow: hidden; }
+  
+  .page-wrapper {
+    background: #edf1f5;
+    position: relative; }
+  
+  .container-fluid {
+    padding: 0px 25px; }

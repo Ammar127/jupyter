@@ -1,1 +1,45 @@
-<p>sidebar works!</p>
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- <div class="scroll"> -->
+            <aside class="left-sidebar">
+                <!-- Sidebar scroll-->
+                <div class="">
+                    <!-- Sidebar navigation-->
+                    <nav class="sidebar-nav">
+                        <ul id="sidebarnav">
+                         
+                            <li> <a [routerLink]="['/app']"  (click)="showMenuFunv(2)"  routerLinkActive="active" class="waves-effect waves-dark " >
+                              <i class="fas fa-tachometer-alt"></i><span class="hide-menu">Dashboard</span></a>
+                            </li>
+                            <li> <a [routerLink]="['/app/reportsng']"  (click)="showMenuFunv(2)"  routerLinkActive="active" class="waves-effect waves-dark " >
+                              <i class="fas fa-list-ul"></i><span class="hide-menu">Custom Reports</span></a>
+                            </li>
+                            <li > <a class="has-arrow waves-effect waves-dark" [ngClass]="{'active': showMenu == 3}" (click)="showMenuFunv(3)" href="javascript:void(0)" aria-expanded="false">
+                              <i class="fas fa-th-large"></i><span class="hide-menu">Campaigns</span></a>
+                                <ul aria-expanded="false" [ngClass]="{'collapse': showMenu != 3}">
+                                    <li><a  [routerLink]="['/app/campaigns']"><i class="fas fa-th-large mr-2"></i>My Campaigns</a></li>
+    
+                                </ul>
+                            </li>
+                          
+                        <li > <a class=" has-arrow waves-effect waves-dark" (click)="showMenuFunv(4)" [ngClass]="{'active': showMenu == 4 }"  href="javascript:void(0)" aria-expanded="false">
+                              <i class="fa fa-list"></i><span class="hide-menu">Reports</span></a>
+                                <ul aria-expanded="false" [ngClass]="{'collapse': showMenu != 4}">
+                                    <li><a  [routerLink]="['/app/reports/transaction']"><i class="fas fa-money-bill-wave mr-2"></i>My Payments</a></li>
+                                    <li><a [routerLink]="['/app/reports/settings']"><i class="fas fa-sliders-h"></i>  Payment Settings</a>
+                                  </li>
+                                </ul>
+                            </li>
+                             
+                          
+    
+        </ul>
+                    </nav>
+                    <!-- End Sidebar navigation -->
+                </div>
+                <!-- End Sidebar scroll-->
+            </aside>
+        <!-- </div> -->
+            <!-- ============================================================== -->
+            <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    

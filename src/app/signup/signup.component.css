@@ -127,13 +127,13 @@ p {
     height: 25px;
     width: 25px;
     background-color: #eee;
-    border: 0.5px solid rgb(241, 145, 28);;
+    border: 1px solid rgb(241, 145, 28);;
   }
   
   /* On mouse-over, add a grey background color */
   .container:hover input ~ .checkmark {
     background-color: #eee;
-    border: 1px solid rgb(241, 145, 28);
+    border: 1.5px solid rgb(241, 145, 28);
     top: 0;
     left: 0;
   }

@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
+import { CoreComponent } from './core/core.component';
+import { AuthGuard } from './_gaurds/auth.gaurd';
 
 
 
@@ -11,20 +13,18 @@ import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
-    {
-        path: '' , pathMatch: 'full', redirectTo: 'home'
-      },
-    {
-        path: 'signup' , component: SignupComponent
-      },   
-    {
-        path: 'login' , component: LoginComponent
-      },
-      {
-        path: '' , component: HomeComponent
-      },
-      { path : 'products' ,  loadChildren: () => import('./product/product.module').then(m => m.ProductModule)},
+  {  path: '' , pathMatch: 'full', redirectTo: 'login' },
+  {  path: 'signup', component: SignupComponent  },
+  {  path: 'login', component: LoginComponent  },
+  {
+    path: 'app', component: CoreComponent,canActivate: [AuthGuard] , children: [
 
+      {
+        path: '', component: HomeComponent
+      },
+      { path: 'products', loadChildren: () => import('./product/product.module').then(m => m.ProductModule) },
+    ]
+  }
 ]
 
 
@@ -37,7 +37,7 @@ const routes: Routes = [
 
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-  })
-  export class AppRoutingModule { }
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

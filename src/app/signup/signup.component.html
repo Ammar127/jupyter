@@ -10,18 +10,35 @@
             <h3>Welcome to IN+</h3>
 
             <p>Create account to see it in action.</p>
-            <form class="m-t" role="form" action="index.html">
+            <form class="m-t" [formGroup]="form" (ngSubmit)="onSubmit()" >
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Name" required="">
+                    <input type="email" formControlName="name" class="form-control" placeholder="Name" required="">
+                    <p *ngIf="isFormSubmitted && f.name.errors && f.name.errors.required"  class="text-danger">
+                        Email is Required
+                </p> 
+               
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email" required="">
-                </div>
+                    <input type="email" formControlName="email" class="form-control" placeholder="Email" required="">
+                 <p *ngIf="isFormSubmitted && f.email.errors && f.email.errors.required"  class="text-danger">
+                        Email is Required
+                </p> 
+                <p *ngIf="isFormSubmitted && f.email.errors && f.email.errors.email"  class="text-danger">
+                    Email is Invalid
+            </p>  
+            </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required="">
+                    <input type="password" formControlName="password" class="form-control" placeholder="Password" required="">
+                    <p *ngIf="isFormSubmitted && f.password.errors && f.password.errors.required"  class="text-danger">
+                        Email is Required
+                </p> 
+                  
                     <div class="form-group">
                         <label class="container"><small>Agree the terms and policy</small>
-                            <input type="checkbox">
+                            <input type="checkbox" formControlName="agree">
+                            <p *ngIf="isFormSubmitted && !f.agree.value"  class="text-danger">
+                                You must agree to the terms and policies
+                        </p>  
                             <span class="checkmark"></span>
                           </label>
                     </div>
@@ -31,9 +48,9 @@
 
                 
                 <p class="text-muted text-center"><small>Already have an account?</small></p>
-                <a class="btn bg-white text-muted btn-block" href="register.html">Login</a>
+                <a class="btn bg-white text-muted btn-block" href="javascript:void(0)" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a>
             </form>
-            <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 © 2014</small> </p>
+          
         </div>
     </div>
 

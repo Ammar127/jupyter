@@ -24,7 +24,7 @@ app.use(cookieParser());
 
 
 urlManager(app);
-// serveAngular(app);
+serveAngular(app);
 
 // disallowMethods(app);
 

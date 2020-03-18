@@ -4,8 +4,8 @@ const express = require("express");
 
 module.exports = app => {
   console.log('dirName',__dirname);
-  app.use("/", express.static(path.join(__dirname, "../../dist/loop")));
+  app.use("/", express.static(path.join(__dirname, "../../dist/jupyter")));
   app.use((req, res, next) => {
-    res.sendFile(path.join(__dirname, "../../dist/loop", "index.html"));
+    res.sendFile(path.join(__dirname, "../../dist/jupyter", "index.html"));
   });
 };

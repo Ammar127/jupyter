@@ -1,0 +1,159 @@
+<div class="container">
+    <div class="card">
+
+        <div class="method-path px-3">
+            <h1 class="text-white">Create Containers</h1>
+        </div>
+
+        <div class="card-body">
+
+            <div class="form-group  row">
+                <div class="col-md-3">
+                    <label class="font-weight-bold mr-4">Select Region</label>
+
+                </div>
+
+                <div class="col-sm-9">
+                    <select class="form-control m-b" name="account">
+                        <option value="eastus">eastus</option>
+                        <option value="eastus2">eastus2</option>
+                        <option value="westus">westus</option>
+                        <option value="westus2">westus2</option>
+                        <option value="centralus">centralus</option>
+                        <option value="canadacentral">canadacentral</option>
+                        <option value="northcentralus">northcentralus</option>
+                        <option value="westcentralus">westcentralus</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group  row">
+                <div class="col-md-3">
+                    <label class="font-weight-bold mr-4">Select Docker Image</label>
+
+                </div>
+
+                <div class="col-sm-5 d-flex p-0">
+                    <input type="radio" class="mt-2 mr-2" id="customimage" name="imageSelector" value="customimage">
+
+                    <select class="form-control m-b" name="account">
+                        <option value="fenago/scipy-notebook">fenago/scipy-notebook</option>
+                        <option value="fenago/vscode">fenago/vscode</option>
+                        <option value="fenago/python-sas">fenago/python-sas</option>
+                        <option value="fenago/generative-adversarial-networks">fenago/generative-adversarial-networks
+                        </option>
+                        <option value="fenago/grokking-deeplearning">fenago/grokking-deeplearning</option>
+                        <option value="fenago/git">fenago/git</option>
+                        <option value="fenago/python-minicourses">fenago/python-minicourses</option>
+                        <option value="fenago/python-machine-learning-by-example">
+                            fenago/python-machine-learning-by-example
+                        </option>
+                        <option value="fenago/deep-learning-for-nlp">fenago/deep-learning-for-nlp</option>
+                        <option value="fenago/deep-learning-time-series-forecasting">
+                            fenago/deep-learning-time-series-forecasting
+                        </option>
+                        <option value="fenago/spark-dev3600">fenago/spark-dev3600</option>
+                        <option value="fenago/ernesto-spark">fenago/ernesto-spark</option>
+                        <option value="fenago/ubuntu18">fenago/ubuntu18</option>
+                        <option value="fenago/ubuntu18:lxqt">fenago/ubuntu18:lxqt</option>
+                        <option value="fenago/centos7">fenago/centos7</option>
+                        <option value="fenago/kali-desktop">fenago/kali-desktop</option>
+                    </select>
+
+                </div>
+
+                <div class="col-md-4 d-flex">
+                    <input type="radio" class="mt-2 mr-2" id="customimage" name="imageSelector" value="customimage">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <label class="font-weight-bold">Enter Container DNS Name:</label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" id="containername" name="containername"
+                        placeholder="unique name" value="">
+                </div>
+                <div class="col-md-5">
+                    <span> Note: Will
+                        be used as prefix for all container instances <br> (Min: 5 characters)</span>
+                </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <label class="font-weight-bold mr-2" for="ports">Enter Ports (comma seperated):</label>
+
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" id="ports" name="ports" size="32"
+                        placeholder="8888,4040,8080,80,6080,6901" value="8888,4040,8080,80,6080,6901">
+
+                </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group">
+                <h3 class="font-weight-bold mr-2 mt-2">Port(s) Info</h3> Jupyterlab: 8888, Spark UI: 4040, VSCode: 8080,
+                Ubuntu Web: 80, Ubuntu/Kali VNC: 5900,
+                Kali
+                Web: 6080, CentOS Web: 6901, CentOS VNC: 5901
+            </div>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <label class="font-weight-bold mr-2">Total Container(s) to Launch:</label>
+                </div>
+                <div class="col-md-9">
+
+
+                    <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <label class="font-weight-bold mr-2">Virtual CPU:</label>
+                </div>
+                <div class="col-lg-9">
+                    <ng5-slider [(value)]="value2" [options]="options2"></ng5-slider>
+                    
+                 </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <label class="font-weight-bold mr-2">Select RAM:</label>
+                </div>
+                <div class="col-lg-9">
+                    <ng5-slider [(value)]="value3" [options]="options3"></ng5-slider>
+
+                     </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <button class="btn rounded-pill" type="submit" id="btn"> Launch Container </button>
+
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-12">
+               <h4 class="ml-3">Note:</h4>    
+                   <h5 class="ml-5">- New container will not be provisioned if it exists already.    <br>
+                    - Please delete container first to change vcpu, ram or region. <br>
+                    - Docker image can't be changed while provisioning is in progress, please retry later in that case.
+                </h5>  
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+            

@@ -7,66 +7,79 @@
                 <div class="ibox-content">
 
                     <div class="row">
-                        <div class="col-md-5 mt-2">
-                            <ngb-carousel>
-                                <ng-template ngbSlide>
-                                  <div class="picsum-img-wrapper">
-                                    <img src="../../../assets/p1.jpg" width="100%" height="400px" alt="Random first slide">
-                                  </div>
-                                  
-                                </ng-template>
-                                <ng-template ngbSlide>
-                                  <div class="picsum-img-wrapper">
-                                    <img src="../../../assets/p2.jpg"  width="100%" height="400px" alt="Random second slide">
-                                  </div>
-                                 
-                                </ng-template>
-                                <ng-template ngbSlide>
-                                  <div class="picsum-img-wrapper">
-                                    <img src="../../../assets/p3.jpg"  width="100%" height="400px" alt="Random third slide">
-                                  </div>
-                                
-                                </ng-template>
-                              </ngb-carousel>
 
-                            
-
-                        </div>
-                        <div class="col-md-7">
+                        <div class="col-md-8">
 
                             <h2 class="font-bold m-b-xs">
-                                Desktop publishing software
+                                Course Name: Git
                             </h2>
-                            <small>Many desktop publishing packages and web page editors now.</small>
-                            <div class="m-t-md">
-                                <h2 class="product-main-price">$406,602 <small class="text-muted">Exclude Tax</small>
-                                </h2>
-                            </div>
+
                             <hr>
 
-                            <h4>Product description</h4>
+                            <h4> Docker Image: </h4>fenago/git
 
-                            <div class="small text-muted">
-                                It is a long established fact that a reader will be distracted by the readable
-                                content of a page when looking at its layout. The point of using Lorem Ipsum is
+                            <div class="">
+                                <h4>Run Image:</h4> docker run -d --user root -p 8888:8888 --name git -e GRANT_SUDO=yes
+                                -e JUPYTER_ENABLE_LAB=yes fenago/git start-notebook.sh
 
                                 <br>
                                 <br>
-                                There are many variations of passages of Lorem Ipsum available, but the majority
-                                have suffered alteration in some form, by injected humour, or randomised words
-                                which don't look even slightly believable.
+                                Note: You can also run multiple instances of jupyterLab by
+                                changing container name and port ( -p :8888 ) in the above command.
                             </div>
-                            <dl class="small m-t-md">
-                                <dt>Description lists</dt>
-                                <dd>A description list is perfect for defining terms.</dd>
-                                <dt>Euismod</dt>
-                                <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                                <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                                <dt>Malesuada porta</dt>
-                                <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                            <dl class=" m-t-md">
+                                <dt>Commit & Push Changes:</dt>
+                                <dd class="mt-2">docker commit git fenago/git</dd>
+                                <dd>docker push fenago/git</dd>
+
                             </dl>
                             <hr>
+                            <div>
+                                <h4>Labs:</h4>
+                                Labs for this course are available at path shared below.
+                                <h4 class="ml-5 mt-3"> 1. Committing Files</h4>
+                                <p class="ml-5 pl-5 bg-light py-2"> * < host-ip>:< port>/lab/workspaces/lab1
+                                </p>
+                                <h4 class="ml-5 mt-3">2. Committing Changes</h4>
+                                <p class="ml-5 pl-5 bg-light py-2"> * < host-ip>:< port>/lab/workspaces/lab2
 
+                                </p>
+                               
+                                <h4 class="ml-5 mt-3"> 3. Working Remotely</h4>
+                                <p class="ml-5 pl-5 bg-light py-2"> * < host-ip>:< port>/lab/workspaces/lab3
+                                </p>
+                                <h4 class="ml-5 mt-3"> 4. Undoing Changes</h4>
+                                <p class="ml-5 pl-5 bg-light py-2"> * < host-ip>:< port>/lab/workspaces/lab4
+                                </p>
+                                <h4 class="ml-5 mt-3"> 5. Finding Bugs</h4>
+                                <p class="ml-5 pl-5 bg-light py-2"> * < host-ip>:< port>/lab/workspaces/lab5
+                                </p>
+                                <h4 class="ml-5 mt-3"> 6. Re-writing History</h4>
+                                <p class="ml-5 pl-5 bg-light py-2"> * < host-ip>:< port>/lab/workspaces/lab6
+                                </p>
+                                <h4 class="ml-5 mt-3"> 7. Branching, Merging, and Options</h4>
+                                <p class="ml-5 pl-5 bg-light py-2"> * < host-ip>:< port>/lab/workspaces/lab7
+                                </p>
+                                <h4 class="ml-5 mt-3"> 8. Storing Additional Information in Your Repository</h4>
+                                <p class="ml-5 pl-5 bg-light py-2"> * < host-ip>:< port>/lab/workspaces/lab8
+                                </p>
+                                <h4 class="ml-5 mt-3"> 9. Extracting Data from the Repository</h4>
+                                <p class="ml-5 pl-5 bg-light py-2"> * < host-ip>:< port>/lab/workspaces/lab9
+                                </p>
+                                <h4 class="ml-5 mt-3"> 10. Recovering from Mistakes</h4>
+                                <p class="ml-5 pl-5 bg-light py-2"> * < host-ip>:< port>/lab/workspaces/lab10
+                                </p>
+                                <h4 class="ml-5 mt-3"> 11. Patching and Offline Sharing (Part 1)</h4>
+                                <p class="ml-5 pl-5 bg-light py-2"> * < host-ip>:< port>/lab/workspaces/lab11
+                                </p>
+                                <h4 class="ml-5 mt-3"> 12. Patching and Offline Sharing (Part 2)</h4>
+                                <p class="ml-5 pl-5 bg-light py-2"> * < host-ip>:< port>/lab/workspaces/lab129
+                                </p>
+                                <h4 class="ml-5 mt-3"> 13. Getting Started with GitHub</h4>
+                                <p class="ml-5 pl-5 bg-light py-2"> * < host-ip>:< port>/lab/workspaces/lab13
+                                </p>
+
+                            </div>
                             <div>
                                 <div class="btn-group">
                                     <button class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Add to
@@ -80,6 +93,25 @@
 
 
 
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h3 class="font-weight-bold">Docker Pull Command</h3>
+                                    <h4 class="bg-dark text-white py-2 pl-3">docker pull fenago/git  <i class="far fa-copy ml-5 fa-lg"></i> </h4>
+                                </div>
+                            </div>
+                            <div class="card bg-light mt-3">
+                                <div class="card-body">
+                                    <h3>Owner</h3>
+                                    <div class="d-flex">
+                                        <a href="">
+                                        <img src="../../../assets/photo.jpg" class="mr-3" width="50px" height="50px" alt=""></a>
+                                       <a href="" class="text-muted"> <h4 class="mt-3"> Fenago</h4></a>
+                                    </div>
+                                </div>
+                            </div>
+                           
                         </div>
                     </div>
 
@@ -98,8 +130,8 @@
         <div class="col-lg-12">
 
             <div class="ibox product-detail">
-               
-               
+
+
             </div>
 
         </div>

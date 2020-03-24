@@ -17,12 +17,12 @@ const routes: Routes = [
   {  path: 'signup', component: SignupComponent  },
   {  path: 'login', component: LoginComponent  },
   {
-    path: 'app', component: CoreComponent,canActivate: [AuthGuard] , children: [
+    path: 'app', component: CoreComponent, children: [
 
-      {
-        path: '', component: HomeComponent
-      },
+      { path: '', component: HomeComponent },
       { path: 'products', loadChildren: () => import('./product/product.module').then(m => m.ProductModule) },
+      { path: 'containers', loadChildren: () => import('./containers/containers.module').then(m => m.ContainersModule) },
+
     ]
   }
 ]

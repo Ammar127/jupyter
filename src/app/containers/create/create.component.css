@@ -1,0 +1,41 @@
+.method-path{
+    background-color: #F1911C;
+}
+select{
+    border: 1px solid rgb(255, 155, 32);
+    color: rgb(128, 130, 133);
+
+}
+select:focus{
+    border: 1px solid #F1911C;
+    color: rgb(128, 130, 133);
+    
+
+}
+input{
+    border: 1px solid rgb(255, 155, 32);
+    color: rgb(128, 130, 133);
+    
+}
+input:focus{
+    border: 1px solid rgb(255, 155, 32);
+    color: rgb(128, 130, 133);
+}
+.btn{
+    background-color: #F1911C;
+    color: white;
+}
+
+.ng5-slider:focus{
+    outline: none !important;
+}
+
+.ng5-slider .ng5-slider-pointer {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    top: -14px;
+    background-color: #F1911C !important;
+    z-index: 3;
+    border-radius: 16px;
+}
